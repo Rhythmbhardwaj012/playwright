@@ -1,0 +1,34 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://ums.lpu.in/lpuums/');
+  await page.getByRole('textbox', { name: 'User ID' }).click();
+  await page.getByRole('textbox', { name: 'User ID' }).fill('123445');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('button', { name: 'OK' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'User ID' }).click();
+  await page.getByRole('textbox', { name: 'User ID' }).fill('112345');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('button', { name: 'OK' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('w212we23e23');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.locator('#CaptchaCodeTextBox').click();
+  await page.locator('#CaptchaCodeTextBox').press('CapsLock');
+  await page.locator('#CaptchaCodeTextBox').fill('nTNJsE');
+  await page.locator('#CaptchaCodeTextBox').press('Enter');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('textbox', { name: 'User ID' }).click();
+  await page.getByRole('textbox', { name: 'User ID' }).fill('12214022');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('NAGFSHDG1');
+  await page.locator('#CaptchaCodeTextBox').click();
+  await page.locator('#CaptchaCodeTextBox').fill('');
+  await page.locator('#CaptchaCodeTextBox').press('CapsLock');
+  await page.locator('#CaptchaCodeTextBox').press('CapsLock');
+  await page.locator('#CaptchaCodeTextBox').fill('MUPsJ');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('button', { name: 'OK' }).click();
+});
